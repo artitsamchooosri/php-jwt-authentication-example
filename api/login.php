@@ -25,7 +25,7 @@ $password = $data->password;
 
 $table_name = 'Users';
 
-$query = "SELECT id, first_name, last_name, password FROM " . $table_name . " WHERE email = ? LIMIT 0,1";
+$query = "SELECT id, first_name, last_name, password FROM Users WHERE email = ? LIMIT 0,1";
 
 $stmt = $conn->prepare( $query );
 $stmt->bindParam(1, $email);

@@ -46,11 +46,13 @@ if($num > 0){
         $audience_claim = "THE_AUDIENCE";
         $issuedat_claim = 1356999524; // issued at
         $notbefore_claim = 1357000000; //not before
+        $expire  = $issuedAt->modify('+1 minutes')->getTimestamp(); 
         $token = array(
             "iss" => $issuer_claim,
             "aud" => $audience_claim,
             "iat" => $issuedat_claim,
             "nbf" => $notbefore_claim,
+            'exp'  => $expire,  
             "data" => array(
                 "id" => $id,
                 "firstname" => $firstname,
